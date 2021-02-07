@@ -7,9 +7,11 @@ import Navbar from "./components/Navbar";
 
 import "./styles.scss";
 
+const LOCAL_STORAGE_KEY = "darkMode";
+
 const App = () => {
   const [coinData, setCoinData] = useState([]);
-  const [darkMode, setDarkMode] = useDarkMode(false);
+  const [darkMode, setDarkMode] = useDarkMode(LOCAL_STORAGE_KEY, false);
 
   useEffect(() => {
     axios
